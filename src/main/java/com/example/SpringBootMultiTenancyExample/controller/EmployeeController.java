@@ -5,10 +5,7 @@ import com.example.SpringBootMultiTenancyExample.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.stream.Collectors;
@@ -20,7 +17,8 @@ public class EmployeeController {
     private EmployeeDAO employeeDAO;
 
     @RequestMapping(value = "emploeeList")
-    public java.util.List<Employee> emploeeList() {
+    public java.util.List<Employee> emploeeList(@RequestHeader("tenantId") String tenantId) {
+        System.out.println("********Header******"+ tenantId);
         return employeeDAO.findAll();
     }
 

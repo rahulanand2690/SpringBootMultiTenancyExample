@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -16,6 +18,7 @@ import javax.sql.DataSource;
 @ComponentScan("com.example.SpringBootMultiTenancyExample")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.example.SpringBootMultiTenancyExample")
+@Import(RestClientConfig.class)
 public class SpringBootMultiTenancyExampleApplication {
 
 	public static void main(String[] args) {
