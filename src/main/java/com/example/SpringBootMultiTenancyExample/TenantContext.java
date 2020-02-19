@@ -9,7 +9,6 @@ public class TenantContext {
 
     public static void setCurrentTenant(String tenant) {
         currentTenant.set(tenant);
-        System.out.println("Tenant in tenentContenxt set " + tenant);
     }
 
     public static void clear() {

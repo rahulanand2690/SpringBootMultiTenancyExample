@@ -42,8 +42,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
         System.out.println("\n-------- LogInterception.postHandle --- ");
         System.out.println("Request URL: " + request.getRequestURL());
     }*/
-@Value("${message}")
-private String ProprttyFiledata;
+
     @Override
     public void afterCompletion(HttpServletRequest request,
                                 HttpServletResponse response,
